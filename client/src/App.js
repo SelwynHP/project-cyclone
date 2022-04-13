@@ -1,18 +1,33 @@
-import './App.css';
 import Header from "./components/Header";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import styled from "styled-components";
+import Homepage from "./components/Homepage";
+import ClientLogin from "./components/ClientCredentials/ClientLogin";
+import Merchants from "./components/Merchants/Merchants";
+import MerchantDetails from "./components/Merchants/MerchantDetails";
+import GlobalStyles from "./components/GlobalStyles";
+import ClientSignup from "./components/ClientCredentials/ClientSignup";
+import MerchantLogin from "./components/MerchantCredentials/MerchantLogin";
+import MerchantSignup from "./components/MerchantCredentials/MerchantSignup";
 
 const App = () => {
-  return (
-    <Wrapper>
-        <Router>
-            <Routes>
-                <Route exact path="/" element={<Header />} />
-            </Routes>
-        </Router>
-    </Wrapper>
-  );
+    return (
+        <Wrapper>
+            <GlobalStyles/>
+            <Router>
+                <Header/>
+                <Routes>
+                    <Route exact path="/" element={<Homepage/>}/>
+                    <Route exact path="/login" element={<ClientLogin/>}/>
+                    <Route exact path="/login/merchant" element={<MerchantLogin/>}/>
+                    <Route exact path="/signup" element={<ClientSignup/>}/>
+                    <Route exact path="/signup/merchant" element={<MerchantSignup/>}/>
+                    <Route exact path="/stores" element={<Merchants/>}/>
+                    <Route exact path="/stores/:merchantId" element={<MerchantDetails/>}/>
+                </Routes>
+            </Router>
+        </Wrapper>
+    );
 }
 
 const Wrapper = styled.div`
