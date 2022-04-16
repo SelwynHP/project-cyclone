@@ -6,7 +6,7 @@ const Merchants = () => {
     return (
         <Wrapper>
             {stores.map(store => {
-                return <Merchant store={store}/>
+                return <Merchant key={store.merchantId} store={store}/>
             })}
         </Wrapper>
     )

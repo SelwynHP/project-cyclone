@@ -2,10 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {UserProvider} from "./components/UserContext";
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
-    <App />,
+    <UserProvider>
+        <App/>
+    </UserProvider>
+    ,
     rootElement
 );
 

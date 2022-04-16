@@ -30,6 +30,7 @@ export const stores = [
     {
         merchantId: "000002MC",
         companyName: "True Color",
+        companyLogo: logo,
         telephone: "5147654321",
         billingAddress: {
             streetNumber: "321",
@@ -50,8 +51,9 @@ export const stores = [
         pickupNotes: "Enter from the back door."
     },
     {
-        merchantId: "000001MC",
+        merchantId: "000003MC",
         companyName: "Toys R Us",
+        companyLogo: logo,
         telephone: "5141234567",
         billingAddress: {
             streetNumber: "123",
@@ -72,8 +74,9 @@ export const stores = [
         pickupNotes: "Enter from the back door."
     },
     {
-        merchantId: "000001MC",
+        merchantId: "000004MC",
         companyName: "Toys R Us",
+        companyLogo: logo,
         telephone: "5141234567",
         billingAddress: {
             streetNumber: "123",
@@ -94,8 +97,9 @@ export const stores = [
         pickupNotes: "Enter from the back door."
     },
     {
-        merchantId: "000001MC",
+        merchantId: "000005MC",
         companyName: "Toys R Us",
+        companyLogo: logo,
         telephone: "5141234567",
         billingAddress: {
             streetNumber: "123",
