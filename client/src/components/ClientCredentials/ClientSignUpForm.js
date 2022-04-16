@@ -1,19 +1,13 @@
 import styled from "styled-components";
-import {useContext} from "react";
-import {UserContext} from "../UserContext";
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import {auth} from "../Firebase";
 
 const ClientSignUpForm = () => {
-    const {setLoginState} = useContext(UserContext);
     const handleSignUp = async (ev) => {
         ev.preventDefault();
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(data => {
-                setLoginState(data);
-            })
+        await createUserWithEmailAndPassword(auth, email, password);
     }
     return (
         <Wrapper>
