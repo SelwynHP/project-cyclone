@@ -7,9 +7,7 @@ const ClientLoginForm = () => {
         ev.preventDefault();
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-        console.log(`Email: ${email} Password: ${password}`);
-        const userCredential = await loginEmailPassword(email, password);
-        console.log(userCredential.user);
+        await loginEmailPassword(email, password);
     }
     return (
         <Wrapper>

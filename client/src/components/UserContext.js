@@ -9,11 +9,11 @@ export const UserProvider = ({children}) => {
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {
-                console.log("logged in!");
-                console.log(user);
+                // console.log("logged in!");
+                // console.log(user);
                 setLoginState(user);
             } else {
-                console.log("No user");
+                // console.log("No user");
                 setLoginState(null);
             }
         })
