@@ -1,17 +1,17 @@
 import {NavLink} from "react-router-dom";
 import styled from "styled-components";
-import {auth, loginEmailPassword} from "../Firebase";
+import {auth} from "../Firebase";
 import {useState} from "react";
 import {firebaseErrorCodes, formErrorCodes} from "../../validation/error-codes";
 import FormError from "../FormError";
-import {createUserWithEmailAndPassword} from "firebase/auth";
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 
 const ClientLoginForm = ({type}) => {
     const formType = {
         "login": {
             "formTitle": "Login",
             "buttonTitle": "Login",
-            "buttonFunction": loginEmailPassword,
+            "buttonFunction": signInWithEmailAndPassword,
         },
         "signup": {
             "formTitle": "Signup",
@@ -35,15 +35,9 @@ const ClientLoginForm = ({type}) => {
         //Login
         if (email && password) {
             try {
-                switch (type) {
-                    case "login":
-                        await formType[type].buttonFunction(email, password);
-                        break;
-                    case "signup":
-                        await formType[type].buttonFunction(auth, email, password);
-                        break;
-                }
-            } catch (err) {
+                await formType[type].buttonFunction(auth, email, password);
+            } catch
+                (err) {
                 setError(firebaseErrorCodes[err.code] ?? firebaseErrorCodes["unknown"]);
             }
         }

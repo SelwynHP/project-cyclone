@@ -1,7 +1,11 @@
 import {NavLink} from "react-router-dom";
 import styled from "styled-components";
+import {useContext} from "react";
+import {UserContext} from "./UserContext";
+import ClientLogOut from "./ClientCredentials/ClientLogOut";
 
 const Header = () => {
+    const {loginState} = useContext(UserContext);
     return (
         <Wrapper>
             <NavLink to="/">
@@ -13,7 +17,10 @@ const Header = () => {
                     <NavLink to="/stores">Stores</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/login">Login</NavLink>
+                    {loginState ?
+                        <ClientLogOut/> :
+                        <NavLink to="/login">Login</NavLink>
+                    }
                 </li>
             </ul>
         </Wrapper>

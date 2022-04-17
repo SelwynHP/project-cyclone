@@ -1,5 +1,5 @@
 import {initializeApp} from "firebase/app";
-import {connectAuthEmulator, getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import {connectAuthEmulator, getAuth} from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBgkw3-kpFpFC2nuiM2t5GcnCNLUmegVr0",
@@ -15,7 +15,3 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 connectAuthEmulator(auth, "http://localhost:9099");
-
-export const loginEmailPassword = async (loginEmail, loginPassword) => {
-    return await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-}
