@@ -8,7 +8,7 @@ const ClientLoggedIn = () => {
     }
     return (
         <Wrapper>
-            <h1>Already signed in</h1>
+            <h1>You are logged in!</h1>
             <button onClick={() => handleLogout()}>Log out</button>
         </Wrapper>
     )

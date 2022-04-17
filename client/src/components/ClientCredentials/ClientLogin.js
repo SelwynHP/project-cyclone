@@ -4,14 +4,14 @@ import ClientLoggedIn from "./ClientLoggedIn";
 import ClientLoginForm from "./ClientLoginForm";
 import {UserContext} from "../UserContext";
 
-const ClientLogin = () => {
+const ClientLogin = ({type}) => {
     const {loginState} = useContext(UserContext);
 
     return (
         <Wrapper>
             {loginState ?
                 <ClientLoggedIn/> :
-                <ClientLoginForm/>}
+                <ClientLoginForm type={type}/>}
         </Wrapper>
     )
 }
