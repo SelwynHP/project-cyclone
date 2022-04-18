@@ -1,24 +1,12 @@
 import {NavLink} from "react-router-dom";
 import styled from "styled-components";
 import {auth} from "../Firebase";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {firebaseErrorCodes, formErrorCodes} from "../../validation/error-codes";
 import FormError from "../FormError";
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+import {formType} from "../../validation/validation-utils";
 
 const ClientLoginForm = ({type}) => {
-    const formType = {
-        "login": {
-            "formTitle": "Login",
-            "buttonTitle": "Login",
-            "buttonFunction": signInWithEmailAndPassword,
-        },
-        "signup": {
-            "formTitle": "Signup",
-            "buttonTitle": "Signup",
-            "buttonFunction": createUserWithEmailAndPassword,
-        }
-    }
     const [error, setError] = useState(null);
 
     const handleLogin = async (ev) => {
@@ -43,6 +31,10 @@ const ClientLoginForm = ({type}) => {
         }
     }
 
+    useEffect(() => {
+        setError(null);
+    }, [type])
+
     return (
         <Wrapper>
             <h1>{formType[type].formTitle}</h1>
@@ -58,6 +50,14 @@ const ClientLoginForm = ({type}) => {
                     <label htmlFor="signup">Don't have an account?</label>
                     <p>
                         Create one <NavLink id="signup" to="/signup">here!</NavLink>
+                    </p>
+                </>
+            }
+            {type === "signup" &&
+                <>
+                    <label htmlFor="signup">Already have an account?</label>
+                    <p>
+                        Login <NavLink id="signup" to="/login">here!</NavLink>
                     </p>
                 </>
             }

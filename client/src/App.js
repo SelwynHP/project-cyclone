@@ -7,7 +7,6 @@ import Merchants from "./components/Merchants/Merchants";
 import MerchantDetails from "./components/Merchants/MerchantDetails";
 import GlobalStyles from "./components/GlobalStyles";
 import MerchantLogin from "./components/MerchantCredentials/MerchantLogin";
-import MerchantSignup from "./components/MerchantCredentials/MerchantSignup";
 
 const App = () => {
     return (
@@ -18,9 +17,9 @@ const App = () => {
                 <Routes>
                     <Route exact path="/" element={<Homepage/>}/>
                     <Route exact path="/login" element={<ClientLogin type="login"/>}/>
-                    <Route exact path="/login/merchant" element={<MerchantLogin/>}/>
+                    <Route exact path="/login/merchant" element={<MerchantLogin type="mLogin"/>}/>
                     <Route exact path="/signup" element={<ClientLogin type="signup"/>}/>
-                    <Route exact path="/signup/merchant" element={<MerchantSignup/>}/>
+                    <Route exact path="/signup/merchant" element={<MerchantLogin type="mSignup"/>}/>
                     <Route exact path="/stores" element={<Merchants/>}/>
                     <Route exact path="/stores/:merchantId" element={<MerchantDetails/>}/>
                 </Routes>
