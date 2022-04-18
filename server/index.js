@@ -2,7 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const helmet = require("helmet");
-const {CreateMerchant} = require("./scripts/handlers");
+const {createMerchant, getItems, getItem} = require("./scripts/handlers");
 const PORT = 8000;
 
 express()
@@ -11,7 +11,9 @@ express()
     .use(cors())
     .use(express.static("public"))
     .use(express.json())
-    .post("/api/create-merchant", CreateMerchant)
+    .get("/api/items", getItems)
+    .get("/api/item/:id", getItem)
+    .post("/api/create-merchant", createMerchant)
     .get("*", (req, res) => {
         res.status(404).json({status: 404, message: "Route not found."})
     })
