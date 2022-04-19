@@ -2,6 +2,7 @@ import {DirectionsRenderer, GoogleMap, LoadScript} from '@react-google-maps/api'
 import {getGeocode, getLatLng} from "use-places-autocomplete";
 import styled from "styled-components";
 import {useCallback, useRef, useState} from "react";
+import TrackingStats from "./TrackingStats";
 
 const TrackingDetails = () => {
     const [directions, setDirections] = useState();
@@ -56,9 +57,9 @@ const TrackingDetails = () => {
 
     return (
         <Wrapper>
-            <Stats>
-                Stats
-            </Stats>
+            {directions &&
+                <TrackingStats time={directions.routes[0].legs[0]}/>
+            }
             <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
                         onLoad={() => onLoad(testPickup, testDropoff)}>
                 <GoogleMap
@@ -78,14 +79,5 @@ const TrackingDetails = () => {
 const Wrapper = styled.div`
   display: flex;
   height: 100vh;
-`
-const Stats = styled.div`
-  background-color: aqua;
-  text-align: center;
-  font-size: 30px;
-  width: 30%;
-  min-width: 100px;
-  max-width: 400px;
-  height: 100%;
 `
 export default TrackingDetails;
