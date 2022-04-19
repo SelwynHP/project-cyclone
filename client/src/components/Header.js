@@ -2,7 +2,6 @@ import {NavLink} from "react-router-dom";
 import styled from "styled-components";
 import {useContext} from "react";
 import {UserContext} from "./UserContext";
-import ClientLogOut from "./ClientCredentials/ClientLogOut";
 
 const Header = () => {
     const {loginState} = useContext(UserContext);
@@ -18,7 +17,7 @@ const Header = () => {
                 </li>
                 <li>
                     {loginState ?
-                        <ClientLogOut/> :
+                        <NavLink to="/profile/client">Account</NavLink> :
                         <NavLink to="/login">Login</NavLink>
                     }
                 </li>

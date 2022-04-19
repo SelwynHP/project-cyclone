@@ -8,6 +8,7 @@ import MerchantDetails from "./components/Merchants/MerchantDetails";
 import GlobalStyles from "./components/GlobalStyles";
 import MerchantLogin from "./components/MerchantCredentials/MerchantLogin";
 import Footer from "./components/Footer";
+import ClientAccount from "./components/Account";
 
 const App = () => {
     return (
@@ -23,6 +24,7 @@ const App = () => {
                     <Route exact path="/signup/merchant" element={<MerchantLogin type="mSignup"/>}/>
                     <Route exact path="/stores" element={<Merchants/>}/>
                     <Route exact path="/stores/:merchantId" element={<MerchantDetails/>}/>
+                    <Route exact path="/profile/client" element={<ClientAccount/>}/>
                 </Routes>
                 <Footer/>
             </Router>
@@ -31,7 +33,7 @@ const App = () => {
 }
 
 const Wrapper = styled.div`
-  
+
 `
 
 export default App;

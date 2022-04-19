@@ -7,11 +7,13 @@ const ClientLogOut = () => {
         await signOut(auth);
     }
     return (
-        <Wrapper onClick={() => handleLogout()}>Log Out</Wrapper>
+        <>
+            <Logout onClick={() => handleLogout()}>Log Out</Logout>
+        </>
     )
 }
 
-const Wrapper = styled.div`
+const Logout = styled.button`
   &:hover {
     cursor: pointer;
   }
