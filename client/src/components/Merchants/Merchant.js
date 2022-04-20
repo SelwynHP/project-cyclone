@@ -1,17 +1,18 @@
 import styled from "styled-components";
 import {useNavigate} from "react-router-dom";
 
-const Merchant = ({store}) => {
-    const location = `/stores/${store.companyHandle}`;
+const Merchant = ({merchant}) => {
+    console.log(merchant);
+    const location = `/stores/${merchant._id}`;
     const nav = useNavigate();
     const handleClick = () => {
         nav(location);
     }
     return (
         <Wrapper onClick={() => handleClick()}>
-            <img src={store?.companyLogo} alt="a company logo"/>
-            <h1>{store.companyName}</h1>
-            <p>{store?.companySlogan}</p>
+            <img src={merchant?.merchantLogo} alt="a company logo"/>
+            <h1>{merchant.merchantName}</h1>
+            <p>{merchant?.merchantSlogan}</p>
         </Wrapper>
     )
 }

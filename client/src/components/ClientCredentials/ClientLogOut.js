@@ -14,6 +14,9 @@ const ClientLogOut = () => {
 }
 
 const Logout = styled.button`
+  background-color: var(--dark-purple);
+  color: var(--english-red);
+
   &:hover {
     cursor: pointer;
   }

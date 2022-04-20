@@ -16,6 +16,19 @@ const createMerchant = async (req, res) => {
         await client.close();
     }
 }
+const getMerchants = async (req, res) => {
+    const {client, db} = await getConn();
+    try {
+        const merchants = await db.collection("merchants").find().toArray();
+        (merchants.length) ?
+            res.status(200).json({status: 200, merchants}) :
+            res.status(404).json({status: 404, message: "No merchants found."});
+    } catch (err) {
+        res.status(500).json({status: 500, error: err.message});
+    } finally {
+        await client.close();
+    }
+}
 
 const getItems = async (req, res) => {
     //Get query values
@@ -76,4 +89,4 @@ const getItem = async (req, res) => {
     }
 };
 
-module.exports = {createMerchant, getItems, getItem};
+module.exports = {createMerchant, getMerchants, getItems, getItem};

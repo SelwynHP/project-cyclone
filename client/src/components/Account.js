@@ -30,14 +30,14 @@ const ClientAccount = () => {
 }
 
 const Wrapper = styled.div`
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
 
-  form {
-    margin: 30px auto;
-    gap: 5px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
+  h1 {
+    font-size: 23px;
+    font-weight: bold;
   }
 `
 

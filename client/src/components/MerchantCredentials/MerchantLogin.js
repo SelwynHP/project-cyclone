@@ -107,15 +107,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 15px 0;
 
-  form {
-    margin: auto;
-    border: 1px solid #8888;
-    padding: 30px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  h1 {
+    font-size: 23px;
+    font-weight: bold;
   }
 `
 export default MerchantLogin;

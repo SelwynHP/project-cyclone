@@ -60,4 +60,31 @@ export default createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
+
+  form {
+    background-color: var(--dark-sea-green);
+    margin: 15px 0;
+    border: 2px solid var(--dark-purple);
+    border-radius: 5px 15px;
+    box-shadow: 10px 10px var(--dark-purple);
+    padding: 30px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  button {
+    margin: 15px 0;
+    border-style: none;
+    background-color: var(--hunter-green);
+    padding: 10px;
+    border-radius: 5px 15px;
+    color: var(--lemon-glacier);
+    font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `
