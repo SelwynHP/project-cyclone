@@ -18,6 +18,7 @@ const Merchant = ({merchant}) => {
 }
 
 const Wrapper = styled.div`
+  text-align: center;
   display: flex;
   flex-direction: column;
   background-color: var(--dark-sea-green);
@@ -29,7 +30,7 @@ const Wrapper = styled.div`
 
   img {
     border-radius: 50%;
-    max-width: 50%;
+    width: 50%;
   }
 
   h1 {

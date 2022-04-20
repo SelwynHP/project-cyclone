@@ -11,6 +11,7 @@ const Item = ({item}) => {
     }
     return (
         <Wrapper>
+            <h2>{item.name}</h2>
             <img src={item.imageSrc} alt={`${item.name}`}/>
             <p>{item.description}</p>
             <h3>${item.price}</h3>
@@ -30,8 +31,12 @@ const Wrapper = styled.div`
   height: 400px;
   border-radius: 20px;
 
+  h2 {
+    margin: 5px 0;
+  }
+
   img {
-    border-radius: 50%;
+    border-radius: 10px;
     max-width: 50%;
   }
 

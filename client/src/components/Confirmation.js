@@ -62,7 +62,7 @@ const Wrapper = styled.div`
   }
 
   img {
-    border-radius: 50%;
+    border-radius: 10px;
     max-width: 50%;
   }
 `
