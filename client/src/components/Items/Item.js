@@ -1,11 +1,13 @@
 import styled from "styled-components";
+import {useNavigate} from "react-router-dom";
 
 const Item = ({item}) => {
+    const nav = useNavigate();
     const handleBuyNow = () => {
-
+        nav(`/confirmation/${item._id}`);
     }
     const handleAddToCart = () => {
-        
+
     }
     return (
         <Wrapper>
@@ -13,7 +15,7 @@ const Item = ({item}) => {
             <p>{item.description}</p>
             <h3>${item.price}</h3>
             <AddToCart>Add to Cart</AddToCart>
-            <BuyNow>Buy Now</BuyNow>
+            <BuyNow onClick={() => handleBuyNow()}>Buy Now</BuyNow>
         </Wrapper>
     )
 }

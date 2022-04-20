@@ -29,6 +29,34 @@ const getMerchants = async (req, res) => {
         await client.close();
     }
 }
+const createClient = async (req, res) => {
+    const {client, db} = await getConn();
+    try {
+        const client = {_id: await getUUID("clients"), ...req.body};
+
+        const result = await db.collection("clients").insertOne(client);
+        (result.insertedId) ?
+            res.status(201).json({status: 201, message: "Account successfully added", result}) :
+            res.status(400).json({status: 400, message: "Account was not successfully added", result});
+    } catch (err) {
+        res.status(500).json({status: 500, message: "An error occurred while processing request", error: err.message});
+    } finally {
+        await client.close();
+    }
+}
+const getClient = async (req, res) => {
+    const {client, db} = await getConn();
+    try {
+        const client = await db.collection("merchants").findOne();
+        (client) ?
+            res.status(200).json({status: 200, client}) :
+            res.status(404).json({status: 404, message: "No client found."});
+    } catch (err) {
+        res.status(500).json({status: 500, error: err.message});
+    } finally {
+        await client.close();
+    }
+}
 
 const getItems = async (req, res) => {
     //Get query values
@@ -89,4 +117,4 @@ const getItem = async (req, res) => {
     }
 };
 
-module.exports = {createMerchant, getMerchants, getItems, getItem};
+module.exports = {createMerchant, getMerchants, getItems, getItem, createClient, getClient};

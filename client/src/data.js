@@ -3,17 +3,14 @@ import logo from "./logo.svg"
 
 export const orders = [
     {
-        orderId: "001",
+        orderId: "d8f12191-35fb-4c3e-8f51-eddd144ee2d2",
         merchant: "Apple",
         items: {
             "iPhone 12 Pro": {
-                quantity: 2
-            },
-            "iPad Mini": {
                 quantity: 1
             }
         },
-        total: 2596.74
+        total: 1612.98
     }
 ]
 export const stores = [
