@@ -1,13 +1,14 @@
 //Addresses are all canadian addresses
 import logo from "./logo.svg"
 
+
 export const stores = [
     {
         merchantId: "000001MC",
-        companyName: "Toys R Us",
-        companyHandle: "toysrus",
-        companySlogan: "A child's wonderland",
-        companyLogo: logo,
+        companyName: "Apple",
+        companyHandle: "apple",
+        companySlogan: "Constant Inovation",
+        companyLogo: "https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?202203311429",
         telephone: "5141234567",
         billingAddress: {
             streetNumber: "123",
@@ -118,5 +119,97 @@ export const stores = [
         email: "admin@toysrus.com",
         paymentMethods: "Credit",
         pickupNotes: "Enter from the back door."
-    }
+    },
+    {
+        merchantId: "000004MC",
+        companyName: "Toys R Us",
+        companyLogo: logo,
+        telephone: "5141234567",
+        billingAddress: {
+            streetNumber: "123",
+            streetName: "Marieville",
+            postalCode: "K1J2T3",
+            City: "Ottawa",
+            Province: "Ontario"
+        },
+        shippingAddress: {
+            streetNumber: "123",
+            streetName: "Marieville",
+            postalCode: "K1J2T3",
+            City: "Ottawa",
+            Province: "Ontario"
+        },
+        email: "admin@toysrus.com",
+        paymentMethods: "Credit",
+        pickupNotes: "Enter from the back door."
+    },
+    {
+        merchantId: "000004MC",
+        companyName: "Toys R Us",
+        companyLogo: logo,
+        telephone: "5141234567",
+        billingAddress: {
+            streetNumber: "123",
+            streetName: "Marieville",
+            postalCode: "K1J2T3",
+            City: "Ottawa",
+            Province: "Ontario"
+        },
+        shippingAddress: {
+            streetNumber: "123",
+            streetName: "Marieville",
+            postalCode: "K1J2T3",
+            City: "Ottawa",
+            Province: "Ontario"
+        },
+        email: "admin@toysrus.com",
+        paymentMethods: "Credit",
+        pickupNotes: "Enter from the back door."
+    },
+    {
+        merchantId: "000004MC",
+        companyName: "Toys R Us",
+        companyLogo: logo,
+        telephone: "5141234567",
+        billingAddress: {
+            streetNumber: "123",
+            streetName: "Marieville",
+            postalCode: "K1J2T3",
+            City: "Ottawa",
+            Province: "Ontario"
+        },
+        shippingAddress: {
+            streetNumber: "123",
+            streetName: "Marieville",
+            postalCode: "K1J2T3",
+            City: "Ottawa",
+            Province: "Ontario"
+        },
+        email: "admin@toysrus.com",
+        paymentMethods: "Credit",
+        pickupNotes: "Enter from the back door."
+    },
+    {
+        merchantId: "000004MC",
+        companyName: "Toys R Us",
+        companyLogo: logo,
+        telephone: "5141234567",
+        billingAddress: {
+            streetNumber: "123",
+            streetName: "Marieville",
+            postalCode: "K1J2T3",
+            City: "Ottawa",
+            Province: "Ontario"
+        },
+        shippingAddress: {
+            streetNumber: "123",
+            streetName: "Marieville",
+            postalCode: "K1J2T3",
+            City: "Ottawa",
+            Province: "Ontario"
+        },
+        email: "admin@toysrus.com",
+        paymentMethods: "Credit",
+        pickupNotes: "Enter from the back door."
+    },
 ]

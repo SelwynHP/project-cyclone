@@ -23,14 +23,15 @@ const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   min-height: 50px;
-  background-color: #1c1819;
+  background-color: var(--dark-purple);
   margin: 0 auto;
   font-family: sans-serif;
   font-size: 0.75em;
-  color: #4d4f50;
+  color: var(--english-red);
 `;
 
 const Copyright = styled.div`
+  color: var(--english-red);
   padding-left: 50px;
 `;
 
@@ -42,7 +43,7 @@ const Button = styled.button`
   padding: 0 25px 0 25px;
   font-family: sans-serif;
   font-size: 1em;
-  color: gray;
+  color: var(--english-red);
   background: none;
   border: 0;
   height: 25px;

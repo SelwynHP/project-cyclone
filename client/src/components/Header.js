@@ -27,7 +27,7 @@ const Header = () => {
 }
 
 const Wrapper = styled.div`
-  background-color: aqua;
+  background-color: var(--dark-sea-green);
   height: 50px;
   display: flex;
   align-items: center;
@@ -43,7 +43,11 @@ const Wrapper = styled.div`
   }
 
   a {
-    color: initial;
+    padding: 10px;
+    border-radius: 5px 15px;
+    background-color: var(--hunter-green);
+    color: var(--lemon-glacier);
+    font-weight: bold;
     text-decoration: none;
   }
 `

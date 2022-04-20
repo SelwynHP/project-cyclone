@@ -9,7 +9,6 @@ const MerchantDetails = () => {
 }
 
 const Wrapper = styled.div`
-
 `
 
 export default MerchantDetails;

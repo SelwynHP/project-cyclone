@@ -14,7 +14,7 @@ const TrackingStats = ({time}) => {
 }
 
 const Wrapper = styled.div`
-  background-color: aqua;
+  //background-color: aqua;
   text-align: center;
   width: 30%;
   min-width: 100px;

@@ -1,17 +1,17 @@
 import styled from "styled-components";
-import {NavLink} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const Merchant = ({store}) => {
+    const location = `/stores/${store.companyHandle}`;
+    const nav = useNavigate();
+    const handleClick = () => {
+        nav(location);
+    }
     return (
-        <Wrapper>
-            <NavLink to={`/stores/${store.companyHandle}`}>
-                <div>
-                    <img src={store?.companyLogo} alt="a company logo"/>
-                    <span>{store.companyName}</span>
-                    <p>{store?.companySlogan}</p>
-                </div>
-
-            </NavLink>
+        <Wrapper onClick={() => handleClick()}>
+            <img src={store?.companyLogo} alt="a company logo"/>
+            <h1>{store.companyName}</h1>
+            <p>{store?.companySlogan}</p>
         </Wrapper>
     )
 }
@@ -19,19 +19,30 @@ const Merchant = ({store}) => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: navajowhite;
+  background-color: var(--dark-sea-green);
   align-items: center;
   justify-content: center;
   width: 300px;
   height: 400px;
   border-radius: 20px;
 
-  a {
-    text-decoration: none;
+  img {
+    border-radius: 50%;
+    max-width: 50%;
+  }
 
-    & :hover {
-      cursor: pointer;
-    }
+  h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+  p {
+    font-style: italic;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `
 

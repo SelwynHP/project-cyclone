@@ -1,6 +1,16 @@
 import {createGlobalStyle} from "styled-components";
 
 export default createGlobalStyle`
+  //https://coolors.co/87b38d-22031f-b23a48-fbff12-3a5a40
+  :root {
+    /* CSS HEX */
+    --dark-sea-green: #87b38dff;
+    --dark-purple: #22031fff;
+    --english-red: #b23a48ff;
+    --lemon-glacier: #fbff12ff;
+    --hunter-green: #3a5a40ff;
+  }
+
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -19,6 +29,7 @@ export default createGlobalStyle`
     border: 0;
     font: inherit;
     vertical-align: baseline;
+    color: var(--lemon-glacier);
   }
 
   /* HTML5 display-role reset for older browsers */

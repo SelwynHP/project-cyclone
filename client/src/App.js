@@ -37,7 +37,8 @@ const App = () => {
 }
 
 const Wrapper = styled.div`
-
+  background-color: var(--hunter-green);
+  height: 100vh;
 `
 
 export default App;
