@@ -26,6 +26,7 @@ const App = () => {
                     <Route exact path="/signup/merchant" element={<MerchantLogin type="mSignup"/>}/>
                     <Route exact path="/stores" element={<Merchants/>}/>
                     <Route exact path="/stores/:merchantId" element={<MerchantDetails/>}/>
+                    {"Login Required"}
                     <Route exact path="/profile/client" element={<ClientAccount/>}/>
                     <Route exact path="/tracking" element={<Tracking/>}/>
                     <Route exact path="/tracking/:orderId" element={<TrackingDetails/>}/>

@@ -1,10 +1,13 @@
 import {DirectionsRenderer, GoogleMap, LoadScript} from '@react-google-maps/api';
 import {getGeocode, getLatLng} from "use-places-autocomplete";
 import styled from "styled-components";
-import {useCallback, useRef, useState} from "react";
+import {useCallback, useContext, useRef, useState} from "react";
 import TrackingStats from "./TrackingStats";
+import ClientLogin from "../ClientCredentials/ClientLogin";
+import {UserContext} from "../UserContext";
 
 const TrackingDetails = () => {
+    const {loginState} = useContext(UserContext);
     const [directions, setDirections] = useState();
     const mapRef = useRef();
 
@@ -57,22 +60,25 @@ const TrackingDetails = () => {
 
     return (
         <Wrapper>
-            {directions &&
+            {(directions && loginState) &&
                 <TrackingStats time={directions.routes[0].legs[0]}/>
             }
-            <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-                        onLoad={() => onLoad(testPickup, testDropoff)}>
-                <GoogleMap
-                    mapContainerStyle={containerStyle}
-                    center={center}
-                    zoom={12}
-                    options={options}
-                    onLoad={mapOnLoad}
-                >
-                    { /* Child components, such as markers, info windows, etc. */}
-                    {directions && <DirectionsRenderer directions={directions}/>}
-                </GoogleMap>
-            </LoadScript>
+            {loginState ?
+                <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+                            onLoad={() => onLoad(testPickup, testDropoff)}>
+                    <GoogleMap
+                        mapContainerStyle={containerStyle}
+                        center={center}
+                        zoom={12}
+                        options={options}
+                        onLoad={mapOnLoad}
+                    >
+                        { /* Child components, such as markers, info windows, etc. */}
+                        {directions && <DirectionsRenderer directions={directions}/>}
+                    </GoogleMap>
+                </LoadScript> :
+                <ClientLogin type="login"/>
+            }
         </Wrapper>
     )
 }
