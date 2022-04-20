@@ -15,7 +15,7 @@ const Loader = () => {
 const Wrapper = styled.div`
   text-align: center;
   color: white;
-  background-color: #22d0ff;
+  background-color: var(--dark-sea-green);
   border-radius: 5px;
 
   .lds-ring {
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
     border: 8px solid;
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #fff transparent transparent transparent;
+    border-color: var(--lemon-glacier) transparent transparent transparent;
   }
 
   .lds-ring div:nth-child(1) {
