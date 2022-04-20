@@ -19,7 +19,7 @@ const Homepage = () => {
                     <h2>The Features</h2>
                     <p>With cyclone, not only can you easily order your favorite dishes and products but you can track
                         'em. No more guessing games. Know where your stuff is all times and at a fast pace. More reasons
-                        to shop with cyclone.</p>
+                        to shop with Cyclone.</p>
                 </div>
                 <img src={tracking} alt="delivery person"/>
             </Features>
@@ -34,17 +34,21 @@ const Homepage = () => {
             <AboutUs>
                 <h2>About us</h2>
                 <p>Cyclone is a technology company that connects people with the best of their neighborhoods across the
-                    US, Canada, Australia, Japan, and Germany. We enable local businesses to meet consumers’ needs of
-                    ease and convenience, and, in turn, generate new ways for people to earn, work, and live. By
-                    building the last-mile logistics infrastructure for local commerce, we’re fulfilling our mission to
-                    grow and empower local economies.</p>
+                    Canada. We allow businesses to meet their consumers’ needs of
+                    ease and convenience, and generate new ways for people to earn, work, and live. By
+                    building the logistics infrastructure for commerces, we’re fulfilling our mission to provide the
+                    next level of comfort, convenience and reliability to a growing market, rich in talent, selection
+                    and
+                    savvy customers.</p>
             </AboutUs>
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
+  margin: 15px auto;
   text-align: center;
+  max-width: 1200px;
 
   & p {
     margin: 0 15px;
@@ -63,17 +67,12 @@ const Wrapper = styled.div`
   }
 
   img {
-
+    max-width: 50vw;
     border-radius: 5px 15px
   }
 `
 const Goal = styled.div`
   overflow: hidden;
-
-  img {
-    width: 50vw;
-    border-radius: 5px
-  }
 
   & div {
     text-align: center;
