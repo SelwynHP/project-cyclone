@@ -3,11 +3,18 @@ import ClientLogOut from "./ClientCredentials/ClientLogOut";
 import {useContext} from "react";
 import {UserContext} from "./UserContext";
 import ClientLogin from "./ClientCredentials/ClientLogin";
+import {NavLink} from "react-router-dom";
 
 const ClientAccount = () => {
     const {loginState} = useContext(UserContext);
     return (
         <Wrapper>
+            {loginState &&
+                <SideBar>
+                    <NavLink to="/tracking">Tracking</NavLink>
+                    <NavLink to="/profile/client">Update Password</NavLink>
+                </SideBar>
+            }
             {loginState ?
                 <>
                     <h1>User Credentials</h1>
@@ -38,6 +45,30 @@ const Wrapper = styled.div`
   h1 {
     font-size: 23px;
     font-weight: bold;
+  }
+`
+
+const SideBar = styled.div`
+  width: 30%;
+  height: 95vh;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: var(--dark-sea-green);
+  box-shadow: 10px -5px var(--dark-purple);
+
+  & > a {
+    display: flex;
+    justify-content: center;
+    background-color: var(--hunter-green);
+    padding: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `
 

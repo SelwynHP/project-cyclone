@@ -1,7 +1,21 @@
 //Addresses are all canadian addresses
 import logo from "./logo.svg"
 
-
+export const orders = [
+    {
+        orderId: "001",
+        merchant: "Apple",
+        items: {
+            "iPhone 12 Pro": {
+                quantity: 2
+            },
+            "iPad Mini": {
+                quantity: 1
+            }
+        },
+        total: 2596.74
+    }
+]
 export const stores = [
     {
         merchantId: "000001MC",
