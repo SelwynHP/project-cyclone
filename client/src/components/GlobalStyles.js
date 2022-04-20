@@ -85,6 +85,7 @@ export default createGlobalStyle`
 
     &:hover {
       cursor: pointer;
+      background-color: var(--dark-purple);
     }
   }
 `

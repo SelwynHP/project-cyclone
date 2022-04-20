@@ -49,7 +49,7 @@ const Button = styled.button`
   height: 25px;
 
   :hover {
-    color: #b0b1b1;
+    color: var(--lemon-glacier);
     cursor: pointer;
   }
 `;

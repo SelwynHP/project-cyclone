@@ -2,15 +2,13 @@ import {NavLink} from "react-router-dom";
 import styled from "styled-components";
 import {useContext} from "react";
 import {UserContext} from "./UserContext";
+import Logo from "./Logo";
 
 const Header = () => {
     const {loginState} = useContext(UserContext);
     return (
         <Wrapper>
-            <NavLink to="/">
-                <h1>Logo</h1>
-            </NavLink>
-
+            <Logo/>
             <ul>
                 <li>
                     <NavLink to="/stores">Stores</NavLink>
